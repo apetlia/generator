@@ -1,0 +1,26 @@
+{
+  "name": "generator",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/apetlia/generator/",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /generator/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "modern-normalize": "^1.1.0",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}

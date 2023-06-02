@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 1.2;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form__params,
+.form__template {
+  font-family: ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo,
+    monospace;
+  resize: none;
+  height: 60vh;
+  padding: 5px;
+  white-space: pre;
+  line-height: 1.2;
+}
+
+.form__template {
+  flex-grow: 1;
+  width: 60vw;
+}
+
+.form__params {
+  width: 30vw;
+}
+
+.form__btn {
+  width: 400px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result__div {
+  padding: 15px;
+  overflow: auto;
+  background-color: #eeeef0;
+}
