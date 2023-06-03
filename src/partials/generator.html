@@ -1,7 +1,7 @@
 <section class="section">
   <div class="container">
     <h1>Generator</h1>
-    <form class="form">
+    <form class="form js-form">
       <textarea
         class="form__template"
         name="template"
@@ -15,9 +15,12 @@
         required
       ></textarea>
       <button class="form__btn" type="submit">Generate</button>
+      <button class="form__btn js-btn-copy" type="button">Copy output</button>
     </form>
-    <div class="result__div">
-      <pre class="result"></pre>
+
+    <div class="result">
+      <pre class="result__params js-output-params"></pre>
+      <pre class="result__output js-output-result"></pre>
     </div>
   </div>
 </section>
