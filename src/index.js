@@ -22,9 +22,18 @@ function generateConfig(evt) {
 
   const params = yaml.load(paramsString);
 
+  // outputParams.innerHTML = JSON.stringify(params, null, 4);
+  // outputResult.innerHTML = nunjucks.renderString(templateString, params);
+
   outputParams.innerHTML = JSON.stringify(params, null, 4);
 
-  outputResult.innerHTML = nunjucks.renderString(templateString, params);
+  nunjucks.renderString(templateString, params, function (err, res) {
+    if (err) {
+      outputResult.innerHTML = err;
+    } else {
+      outputResult.innerHTML = res;
+    }
+  });
 }
 
 function copy() {
