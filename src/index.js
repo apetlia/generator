@@ -27,20 +27,20 @@ function generateConfig(evt) {
 
   try {
     params = yaml.load(paramsString);
-    outputParams.innerHTML = JSON.stringify(params, null, 4);
+    outputParams.textContent = JSON.stringify(params, null, 4);
   } catch (err) {
-    outputParams.innerHTML = err.message;
+    outputParams.textContent = err.message;
     notifyGenerate(err.name);
     return;
   }
 
   nunjucks.renderString(templateString, params, function (err, res) {
     if (err) {
-      outputResult.innerHTML = err;
+      outputResult.textContent = err;
       notifyGenerate(err.name);
       return;
     } else {
-      outputResult.innerHTML = res;
+      outputResult.textContent = res;
       notifyGenerate('Generated');
     }
   });
@@ -65,6 +65,6 @@ function notifyGenerate(msg) {
 }
 
 function clearOutput() {
-  outputParams.innerHTML = '';
-  outputResult.innerHTML = '';
+  outputParams.textContent = '';
+  outputResult.textContent = '';
 }
