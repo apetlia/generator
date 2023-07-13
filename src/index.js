@@ -28,22 +28,31 @@ function generateConfig(evt) {
   try {
     params = yaml.load(paramsString);
     outputParams.textContent = JSON.stringify(params, null, 4);
+
+    if (!Array.isArray(params)) {
+      params = [params];
+    }
   } catch (err) {
     outputParams.textContent = err.message;
     notifyGenerate(err.name);
     return;
   }
 
-  nunjucks.renderString(templateString, params, function (err, res) {
-    if (err) {
-      outputResult.textContent = err;
-      notifyGenerate(err.name);
-      return;
-    } else {
-      outputResult.textContent = res;
-      notifyGenerate('Generated');
-    }
-  });
+  let result = '';
+
+  for (const param of params) {
+    nunjucks.renderString(templateString, param, function (err, res) {
+      if (err) {
+        outputResult.textContent = err;
+        notifyGenerate(err.name);
+        return;
+      } else {
+        result += res;
+        outputResult.textContent = result;
+        notifyGenerate('Generated');
+      }
+    });
+  }
 }
 
 function onCopyClick() {
